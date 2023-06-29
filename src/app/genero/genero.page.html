@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Genero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+
+
+
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  
+    <ion-button name="star" color="tertiary" (click)="predecirGenero()">
+      <ion-icon  slot="start" name="transgender-outline"> </ion-icon>
+    Predecir Género
+    </ion-button>
+
+
+  <div *ngIf="generoPredicho">
+    <div [ngStyle]="{'background-color': generoPredicho === 'male' ? 'blue' : 'pink'}" >
+      <p [ngStyle]="{'color': generoPredicho === 'male' ? 'white' : 'black'}">
+        El género predicho para {{ nombre }} es: {{ generoPredicho === 'male' ? 'Masculino' : 'Femenino' }}
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+</ion-content>

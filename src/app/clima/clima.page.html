@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content class="ion-padding">
+    <ion-card *ngIf="clima">
+      <ion-card-header>
+        <ion-card-title>{{ clima.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-img src="assets\weather.png"></ion-img>
+        <ion-item>
+          <ion-label>Tiempo:</ion-label>
+          <ion-note slot="end">{{ clima.weather[0].main }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Descripción:</ion-label>
+          <ion-note slot="end">{{ clima.weather[0].description }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Temperatura:</ion-label>
+          <ion-note slot="end">{{ clima.main.temp }} °C</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Humedad:</ion-label>
+          <ion-note slot="end">{{ clima.main.humidity }}%</ion-note>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+</ion-content>

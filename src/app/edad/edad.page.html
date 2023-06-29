@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Edad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-button color="tertiary" (click)="predecirEdad()">
+    <ion-icon name="finger-print-outline"></ion-icon>
+    Predecir edad
+  </ion-button>
+
+  <div class="main">
+  <div *ngIf="edad">
+   
+    <div *ngIf="edad <= 30">
+      <img src="assets/joven.jpg">
+      <p>La edad predicha es {{edad}} años y es un joven</p>
+    </div>
+    <div *ngIf="edad > 30 && edad <= 65">
+      <img src="assets/adultos.jpg">
+      <p>La edad predicha es {{edad}} años y es un adulto</p>
+    </div>
+    <div *ngIf="edad > 65" class="anciano">
+      <img src="assets/ancianos.jpg">
+      <p>La edad predicha es {{edad}} años y es un anciano</p>
+    </div>
+  </div>
+</div>
+
+
+
+</ion-content>

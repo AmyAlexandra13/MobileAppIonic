@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+
+  <div id="container">
+   
+    <div class="button-group" *ngFor="let p of appPages  ">
+      <ion-button [routerLink]="[p.url]" color="primary">{{p.title}}</ion-button>
+     
+    </div>
+   
+  </div>
+</ion-content>

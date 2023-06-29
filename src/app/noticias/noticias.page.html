@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let noticia of noticias">
+    <img src="assets\almomento.png" class="logo">
+    <ion-card-header>
+      <ion-card-title>{{ noticia.titulo }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div [innerHTML]="noticia.resumen"></div>
+    </ion-card-content>
+    <ion-item>
+      <a href="{{ noticia.enlace }}" target="_blank">Ver noticia</a>
+    </ion-item>
+  </ion-card>
+  
+</ion-content>
